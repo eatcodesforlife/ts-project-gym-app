@@ -9,17 +9,19 @@ import SponsorFortune from "@/assets/SponsorFortune.png";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import useMediaQuery from '@/hooks/useMediaQuery';
 import { motion } from 'framer-motion';
-
-
-
-
+import { setPage } from '@/shared/setPage';
 
 const Home = ({setSelectedPage}: Props) => {
-
+    
+    // const setPage = (href:NavMenuLinks) => {
+    //   if(setSelectedPage) setSelectedPage(href)
+    // }
     const isAboveMediumScreen = useMediaQuery('(min-width: 1060px)')
   return <section id='home' className='gap-16 bg-gray-20 py-10 md:h-full md:pb-10'>
     {/*  image and main header */}
-    <div className='md:flex mx-auto w-5/6 items-center justify-center md:h-5/6'>
+    <motion.div
+      onViewportEnter={()=> setPage(setSelectedPage,NavMenuLinks.Home)}
+      className='md:flex mx-auto w-5/6 items-center justify-center md:h-5/6'>
       {/* main header */}
       
       <div className='z-10 mt-32 md:basis-3/5'>
@@ -65,7 +67,7 @@ const Home = ({setSelectedPage}: Props) => {
             className="text-sm font-bold text-primary-500 
             underline hover:text-secondary-500 transition duration-300"
             href={`${NavMenuLinks.ContactUs}`}
-            onClick={() => setSelectedPage(NavMenuLinks.ContactUs)}
+            onClick={() => setPage(NavMenuLinks.ContactUs)}
           >
             <p>Learn More</p>
           </AnchorLink>
@@ -86,7 +88,7 @@ const Home = ({setSelectedPage}: Props) => {
         md:mt-16 md:justify-items-end'>
         <img src={HomePageGraphic} alt="home page graphic" />
       </motion.div>
-    </div>
+    </motion.div>
     {/* sponsors */}
     {
       isAboveMediumScreen && (

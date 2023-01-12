@@ -11,5 +11,6 @@ export type Props = {
     selectedPage?: NavMenuLinks
     isMenuOpen?: boolean
     setIsMenuOpen?: (value: boolean) => void
-    setSelectedPage: (value:NavMenuLinks) => void
+    setSelectedPage?: (value:NavMenuLinks) => void
 }
+

@@ -2,12 +2,7 @@ import { useState } from 'react'
 import Navbar from '@/scenes/navbar'
 import { NavMenuLinks } from '@/shared/types'
 import Home from './scenes/home'
-
-// type Props = {
-//   children?: React.ReactNode
-//   selectedPage: NavMenuLinks
-//   setSelectedPage: (value: NavMenuLinks) => void
-// }
+import Benefits from './scenes/benefits'
 
 function App() {
   const [ selectedPage, setSelectedPage ] = useState<NavMenuLinks>(NavMenuLinks.Home)
@@ -19,6 +14,7 @@ function App() {
         setSelectedPage={setSelectedPage}
       />
       <Home selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
+      <Benefits/>
     </div>
   )
 }
