@@ -21,7 +21,7 @@ const Navbar = ({selectedPage,setSelectedPage }: Props) => {
         const handleScroll = () => {
             if(window.scrollY === 0 ) {
                 setIsTopPage(true)
-                setSelectedPage(NavMenuLinks.Home)
+                setSelectedPage!(NavMenuLinks.Home)
             }
             if(window.scrollY !== 0 ) {
                 setIsTopPage(false)
