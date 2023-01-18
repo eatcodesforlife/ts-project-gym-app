@@ -29,8 +29,10 @@ module.exports = {
         evolveText: "url('./assets/EvolveText.png')",
         abstractText: "url('./assets/AbstractText.png')",
         circles: "url('./assets/Circles.png')",
-        sparkes: "url('./assets/Sparkles.png')",
+        sparkles: "url('./assets/Sparkles.png')",
+        abstractWaves: "url('./assets/AbstractWaves.png')"
       }
+      
     },
     screens: {
       xs: '480px',

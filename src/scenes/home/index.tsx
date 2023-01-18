@@ -9,9 +9,11 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import useMediaQuery from '@/hooks/useMediaQuery';
 import { motion } from 'framer-motion';
 
+
+
 const Home = ({setSelectedPage}: Props) => {
     
-    
+    const isOpen = true
     const isAboveMediumScreen = useMediaQuery('(min-width: 1060px)')
   return <section id='home' className='gap-16 bg-gray-20 py-10 md:h-full md:pb-10'>
     {/*  image and main header */}
@@ -26,7 +28,7 @@ const Home = ({setSelectedPage}: Props) => {
           initial='hidden'
           whileInView='visible'
           viewport={ {amount: .5}}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 1, ease:'easeInOut'}}
           variants={{
             hidden: { opacity: 0, x: -50 },
             visible: { opacity: 1, x: 0 },
@@ -52,9 +54,9 @@ const Home = ({setSelectedPage}: Props) => {
             type: "spring",
             stiffness: 260,
             damping: 20,
-            duration: .5,
-            delay: 1
-          }}  
+            duration: 1,
+            delay: 1.5
+          }}
           className='mt-8 flex items-center gap-8 justify-start'>
           <ActionButton setSelectedPage={setSelectedPage}>
             Join now
@@ -62,8 +64,8 @@ const Home = ({setSelectedPage}: Props) => {
           <AnchorLink 
             className="text-sm font-bold text-primary-500 
             underline hover:text-secondary-500 transition duration-300"
-            href={`${NavMenuLinks.ContactUs}`}
-            onClick={() => setSelectedPage!(NavMenuLinks.ContactUs)}
+            href={`#${NavMenuLinks.Benefits}`}
+            onClick={() => setSelectedPage!(NavMenuLinks.Benefits)}
           >
             <p>Learn More</p>
           </AnchorLink>
@@ -75,7 +77,7 @@ const Home = ({setSelectedPage}: Props) => {
         initial='hidden'
         whileInView='visible'
         viewport={ {amount: .5}}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 1, ease: 'easeOut' }}
         variants={{
           hidden: { opacity: 0, x: 50 },
           visible: { opacity: 1, x: 0 },

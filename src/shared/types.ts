@@ -15,6 +15,7 @@ export type Props = {
     setIsMenuOpen?: (value: boolean) => void
     setSelectedPage?: (value:NavMenuLinks) => void
     benefit?: BenefitTypes
+    program?: ClassesTypes
 }
 
 
@@ -23,4 +24,12 @@ export interface BenefitTypes  {
     icon: JSX.Element,
     title: string,
     description: string,
+}
+
+
+export interface ClassesTypes {
+    id: string
+    title: string
+    description?: string
+    image_url?: string
 }

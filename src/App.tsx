@@ -3,6 +3,7 @@ import Navbar from '@/scenes/navbar'
 import { NavMenuLinks } from '@/shared/types'
 import Home from './scenes/home'
 import Benefits from './scenes/benefits'
+import OurClasses from './scenes/ourClasses'
 
 function App() {
   const [ selectedPage, setSelectedPage ] = useState<NavMenuLinks>(NavMenuLinks.Home)
@@ -15,6 +16,7 @@ function App() {
       />
       <Home selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
       <Benefits setSelectedPage={setSelectedPage}/>
+      <OurClasses setSelectedPage={setSelectedPage}/>
     </div>
   )
 }

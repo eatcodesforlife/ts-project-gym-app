@@ -16,7 +16,7 @@ function Link({
             transition duration-500 hover:text-primary-300
         `}
         href={`#${link}`}
-        onClick={()=>  setSelectedPage(link)}
+        onClick={()=>  setSelectedPage!(link)}
     >
         {page}
     </AnchorLink>
