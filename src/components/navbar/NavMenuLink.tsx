@@ -2,8 +2,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { NavMenuLinks } from '@/shared/types'
 import { Props } from '@/shared/types'
 
-
-function Link({
+function MenuLink({
     page,
     selectedPage,
     setSelectedPage
@@ -11,7 +10,9 @@ function Link({
     const link = page?.toLowerCase().replace(/ /g,'') as NavMenuLinks
 
   return (
+    
     <AnchorLink
+        offset={88}
         className={`${selectedPage === link && "text-primary-500" }
             transition duration-500 hover:text-primary-300
         `}
@@ -20,7 +21,8 @@ function Link({
     >
         {page}
     </AnchorLink>
+
   )
 }
 
-export default Link
+export default MenuLink

@@ -9,7 +9,7 @@ const OurClasses = ({setSelectedPage}: Props) => {
   return (
     <section 
         id='ourclasses'
-        className='w-full bg-primary-100 py-40'
+        className='w-full bg-primary-100 py-40 min-h-screen'
     >
         <motion.div
             onViewportEnter={()=> setSelectedPage!(NavMenuLinks.OurClasses)}
@@ -34,7 +34,7 @@ const OurClasses = ({setSelectedPage}: Props) => {
                 </div>
             </motion.div>
             <div className='mt-10 h-[350px] w-full overflow-x-auto overflow-y-hidden'>
-                <ul className=' w-[2800px] whitespace-nowrap'>
+                <ul className=' w-[2800px]  whitespace-nowrap '>
                     {
                         ourClasses.map( (program:ClassesTypes) => {
                             return <TrainingProgram key={program.id}

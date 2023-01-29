@@ -2,7 +2,7 @@ import { Props } from '@/shared/types'
 
 const Classes = ({program}:Props) => {
   return (
-    <li className='relative mx-5 inline-block h-[350px] w-[450px]'>
+    <li className='li-container relative mx-5 inline-block h-[380px] w-[450px]'>
       <div className='overlay'>
         <h4 className='font-bold text-lg'>{program?.title}</h4>
         <p className='my-5'>{program?.description}</p>

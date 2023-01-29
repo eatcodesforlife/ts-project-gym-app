@@ -1,6 +1,7 @@
 import { Props } from '@/shared/types'
-import Link from './Link'
 import { XMarkIcon } from '@heroicons/react/24/solid'
+import { NavLink } from 'react-router-dom'
+import NavMenuLink from './NavMenuLink'
 
 
 function SideModalMenu({setSelectedPage, selectedPage, setIsMenuOpen, isMenuOpen}: Props) {
@@ -17,27 +18,30 @@ function SideModalMenu({setSelectedPage, selectedPage, setIsMenuOpen, isMenuOpen
     </span>
     {/* nav links */}
     <div className='ml-[33%] flex flex-col gap-10 text-2xl'>
-        <Link
+        <NavMenuLink
             selectedPage={selectedPage}
             setSelectedPage={setSelectedPage} 
             page="Home"
         />
-        <Link
+        <NavMenuLink
             selectedPage={selectedPage}
             setSelectedPage={setSelectedPage} 
             page="Benefits"
         />
-        <Link
+        <NavMenuLink
             selectedPage={selectedPage}
             setSelectedPage={setSelectedPage} 
             page="Our Classes"
         />
-        <Link
+        <NavMenuLink
             selectedPage={selectedPage}
             setSelectedPage={setSelectedPage} 
             page="Contact Us"
         />
     </div>
+    <NavLink to='/signin'>
+     <p className='text-center mt-20  cursor-pointer hover:text-primary-300'>Sign In</p>
+    </NavLink>
 </div>
   )
 }

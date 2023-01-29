@@ -1,23 +1,24 @@
 import { useState } from 'react'
-import Navbar from '@/scenes/navbar'
-import { NavMenuLinks } from '@/shared/types'
-import Home from './scenes/home'
-import Benefits from './scenes/benefits'
-import OurClasses from './scenes/ourClasses'
+import Layout from './pages/Layout'
+import { NavMenuLinks } from './shared/types'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import SignupPage from './pages/SignupPage'
+import SignInPage from './pages/SigninPage'
 
 function App() {
   const [ selectedPage, setSelectedPage ] = useState<NavMenuLinks>(NavMenuLinks.Home)
   
   return (
-    <div className="app bg-gray-20">
-      <Navbar
-        selectedPage={selectedPage}
-        setSelectedPage={setSelectedPage}
-      />
-      <Home selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
-      <Benefits setSelectedPage={setSelectedPage}/>
-      <OurClasses setSelectedPage={setSelectedPage}/>
-    </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Layout selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>}>
+            <Route index element={<Home selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>} />
+          </Route>
+          <Route path='/signup' element={<SignupPage />}/>
+          <Route path='/signin' element={<SignInPage/>}/>
+        </Routes>
+      </BrowserRouter>
   )
 }
 

@@ -7,13 +7,12 @@ import SponsorForbes from "@/assets/SponsorForbes.png";
 import SponsorFortune from "@/assets/SponsorFortune.png";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import useMediaQuery from '@/hooks/useMediaQuery';
-import { motion } from 'framer-motion';
-
+import { delay, motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 
 const Home = ({setSelectedPage}: Props) => {
     
-    const isOpen = true
     const isAboveMediumScreen = useMediaQuery('(min-width: 1060px)')
   return <section id='home' className='gap-16 bg-gray-20 py-10 md:h-full md:pb-10'>
     {/*  image and main header */}
@@ -34,9 +33,20 @@ const Home = ({setSelectedPage}: Props) => {
             visible: { opacity: 1, x: 0 },
           }}
           className='md:-mt-20'>
-            <div className='relative' >
-              <div className='before:absolute before:-mt-20 md:before:content-evolveText before:z-[-2]'>
-                <img src={HomePageText} alt="home-page-text" />
+            <div className='' >
+              <div>
+                <motion.div 
+                  initial='hidden'
+                  whileInView='visible'
+                  viewport={ {amount: .5}}
+                  transition={{ duration: 1.5, ease:'easeInOut', delay: 1.5}}
+                  style={{zIndex: -100}}
+                  variants={{
+                    hidden: { opacity: 0, x: 75 },
+                    visible: { opacity: 1, x: 0},
+                  }}
+                  className='before:absolute before:-mt-20 md:before:content-evolveText before:z-[-100] relative'></motion.div>
+                <img src={HomePageText} alt="home-page-text" className='z-[100]'/>
               </div>
             </div>
             <p className="mt-8 text-sm">
@@ -59,7 +69,7 @@ const Home = ({setSelectedPage}: Props) => {
           }}
           className='mt-8 flex items-center gap-8 justify-start'>
           <ActionButton setSelectedPage={setSelectedPage}>
-            Join now
+            <Link to='/signup'>Join now</Link>
           </ActionButton>
           <AnchorLink 
             className="text-sm font-bold text-primary-500 

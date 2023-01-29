@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react"
 import { Bars3Icon } from '@heroicons/react/24/solid'
 import Logo from '@/assets/Logo.png'
-import Link from "./Link"
 import { NavMenuLinks } from "@/shared/types"
 import ActionButton from "@/shared/ActionButton"
 import useMediaQuery from "@/hooks/useMediaQuery"
 import { Props } from "@/shared/types"
 import SideModalMenu from "./SideModalMenu"
+import NavMenuLink from "./NavMenuLink"
+import { NavLink } from "react-router-dom"
 
-
-const flexBetween = 'flex items-center justify-between'
 
 const Navbar = ({selectedPage,setSelectedPage }: Props) => {
     const [ isMenuOpen, setIsMenuOpen ] = useState(false)
@@ -35,8 +34,10 @@ const Navbar = ({selectedPage,setSelectedPage }: Props) => {
     }, [])
     //add bg color on nav bar when user scrolls down
     const styleOnScroll = !isTopPage && 'bg-primary-100 drop-shadow'
+    const flexBetween = 'flex items-center justify-between'
 
-  return <nav>
+
+  return <nav >
     <div className={`${styleOnScroll} ${flexBetween} fixed top-0 z-30 w-full py-6`}>
         <div className={`${flexBetween} mx-auto w-5/6`}>
             <div className={`${flexBetween} w-full gap-16 `}>
@@ -45,30 +46,36 @@ const Navbar = ({selectedPage,setSelectedPage }: Props) => {
                 {/* right menu */}
                 { isAboveMediumScreen ? <div className={`${flexBetween} w-full `}>
                     <div className={`${flexBetween} gap-8 text-sm`}>
-                        <Link
+                        <NavMenuLink
                             selectedPage={selectedPage}
                             setSelectedPage={setSelectedPage} 
                             page="Home"
                         />
-                        <Link
+                        <NavMenuLink
                             selectedPage={selectedPage}
                             setSelectedPage={setSelectedPage} 
                             page="Benefits"
                         />
-                        <Link
+                        <NavMenuLink
                             selectedPage={selectedPage}
                             setSelectedPage={setSelectedPage} 
                             page="Our Classes"
                         />
-                        <Link
+                        <NavMenuLink
                             selectedPage={selectedPage}
                             setSelectedPage={setSelectedPage} 
                             page="Contact Us"
                         />
                     </div>
                     <div className={`${flexBetween} gap-8`}>
-                        <span>Sign In</span>
-                        <ActionButton setSelectedPage={setSelectedPage}>Become a member</ActionButton>
+                            <NavLink to='/signin'>
+                                <span className="hover:text-primary-300 duration-300">Sign In</span>
+                            </NavLink>
+                        <ActionButton setSelectedPage={setSelectedPage}>
+                            <NavLink to='/signup'>
+                             Become a member
+                            </NavLink>
+                        </ActionButton>
                     </div>
                 </div> : <button className="rounded-full bg-secondary-500 p-2 cursor-pointer "
                     onClick={() => setIsMenuOpen(!isMenuOpen)} 

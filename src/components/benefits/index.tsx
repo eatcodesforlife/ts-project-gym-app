@@ -5,10 +5,12 @@ import { benefits } from '@/shared/data/benefits'
 import Benefit from './Benefit'
 import ActionButton from '@/shared/ActionButton'
 import BenefitsPageGraphic from '@/assets/BenefitsPageGraphic.png'
-
+import { Link } from 'react-router-dom'
 
 const Benefits = ({setSelectedPage}: Props) => {
   
+
+
   return (
     <section id='benefits' 
       className='mx-auto min-h-full w-5/6 py-20'>
@@ -66,7 +68,7 @@ const Benefits = ({setSelectedPage}: Props) => {
               <div className='relative mt-16'>
                <div className='before:absolute before:-bottom-20 before:right-10 before:content-sparkles before:-z-[1]'>
                 <ActionButton setSelectedPage={setSelectedPage}>
-                  Join now
+                  <Link to='/signin'>Join now</Link>
                 </ActionButton>
                </div>
               </div>

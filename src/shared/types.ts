@@ -1,4 +1,4 @@
-import React from "react"
+import {Dispatch} from "react"
 
 export enum NavMenuLinks {
     Home = 'home',
@@ -16,6 +16,10 @@ export type Props = {
     setSelectedPage?: (value:NavMenuLinks) => void
     benefit?: BenefitTypes
     program?: ClassesTypes
+    inputType?: string
+    isShowPassword?: boolean
+    isAlreadymember?: boolean
+    dispatch?:Dispatch<{ type: string, payload:PayloadType }>
 }
 
 
@@ -32,4 +36,10 @@ export interface ClassesTypes {
     title: string
     description?: string
     image_url?: string
+}
+
+
+export type PayloadType = {
+    inputType: string,
+    isShowPassword: boolean
 }
