@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import SignupPage from './pages/SignupPage'
 import SignInPage from './pages/SigninPage'
+import MessageSent from './components/messagesent'
+import PageNotFound from './pages/PageNotFound'
 
 function App() {
   const [ selectedPage, setSelectedPage ] = useState<NavMenuLinks>(NavMenuLinks.Home)
@@ -17,6 +19,8 @@ function App() {
           </Route>
           <Route path='/signup' element={<SignupPage />}/>
           <Route path='/signin' element={<SignInPage/>}/>
+          <Route path='/messagesent' element={<MessageSent />}/>
+          <Route path='/*' element={<PageNotFound />}/>
         </Routes>
       </BrowserRouter>
   )

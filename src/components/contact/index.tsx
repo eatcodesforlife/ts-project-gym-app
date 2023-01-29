@@ -90,6 +90,9 @@ const Contact = ({setSelectedPage}:Props) => {
                   <label htmlFor="message" className={customPlaceholder}>MESSAGE</label>
 
                 </div>
+                <input type="hidden" name="_next" value="https://ts-project-gym-app.vercel.app/messagesent" />
+
+
                 <button 
                   type="submit"
                   className='primary-btn'>

@@ -4,7 +4,7 @@ import Contact from '../components/contact'
 import Hero from '../components/hero'
 import OurClasses from '../components/ourClasses'
 import { Props } from '@/shared/types'
-
+import MessageSent from '@/components/messagesent'
 
 const Home = ({selectedPage,setSelectedPage}:Props) => {
     
