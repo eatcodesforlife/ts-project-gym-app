@@ -14,12 +14,13 @@ const customPlaceholder = 'pb-5 font-semi-bold	pointer-events-none absolute top-
 
 const Contact = ({setSelectedPage}:Props) => {
 
-  const onSubmit = async (e:Event) => {
+  const handleSubmit =  (e:any) => {
     e.preventDefault()
   }
 
   return (
     <section 
+      onSubmit={handleSubmit}
       id="contactus"
       className="bg-gray-20  ">
         <div  className="mx-auto w-5/6 pt-24 pb-31">
@@ -48,8 +49,8 @@ const Contact = ({setSelectedPage}:Props) => {
             </div>
             <div className="md:w-full mt-10">
               <form
-                name="gym contact"
-                action='/messagesent'
+                name="gymapp contact"
+                action='/pages/messagesent'
                 method="POST"
                 data-netlify="true"
                 data-netlify-honeypot='bot-field'
