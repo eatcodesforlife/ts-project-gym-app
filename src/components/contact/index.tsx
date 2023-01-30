@@ -14,13 +14,8 @@ const customPlaceholder = 'pb-5 font-semi-bold	pointer-events-none absolute top-
 
 const Contact = ({setSelectedPage}:Props) => {
 
-  const handleSubmit =  (e:any) => {
-    e.preventDefault()
-  }
-
   return (
     <section 
-      onSubmit={handleSubmit}
       id="contactus"
       className="bg-gray-20  ">
         <div  className="mx-auto w-5/6 pt-24 pb-31">
