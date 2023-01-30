@@ -1,4 +1,4 @@
-import MessageSuccess from '@/components/messagesent'
+import MessageSuccess from '@/components/success'
 
 
 

@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import SignupPage from './pages/SignupPage'
 import SignInPage from './pages/SigninPage'
-import MessageSent from './components/messagesent'
+import MessageSent from './pages/MessageSent'
 import PageNotFound from './pages/PageNotFound'
 
 function App() {
