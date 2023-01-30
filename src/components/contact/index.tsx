@@ -45,7 +45,7 @@ const Contact = ({setSelectedPage}:Props) => {
             <div className="md:w-full mt-10">
               <form
                 name="gymapp contact"
-                action='/pages/messagesent'
+                action='/messagesent'
                 method="POST"
                 data-netlify="true"
                 data-netlify-honeypot='bot-field'
