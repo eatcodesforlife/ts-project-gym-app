@@ -19,7 +19,7 @@ function App() {
           </Route>
           <Route path='/signup' element={<SignupPage />}/>
           <Route path='/signin' element={<SignInPage/>}/>
-          <Route path='/messagesent' element={<MessageSent />}/>
+          <Route path='/pages/messagesent' element={<MessageSent />}/>
           <Route path='/*' element={<PageNotFound />}/>
         </Routes>
       </BrowserRouter>

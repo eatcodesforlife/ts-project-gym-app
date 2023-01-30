@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { Props } from '@/shared/types'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { motion } from 'framer-motion'
