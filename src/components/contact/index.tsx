@@ -14,12 +14,6 @@ const customPlaceholder = 'pb-5 font-semi-bold	pointer-events-none absolute top-
 
 const Contact = ({setSelectedPage}:Props) => {
 
-  const { 
-    register, 
-    trigger,
-    formState: { errors}
-  } = useForm()
-
   const onSubmit = async (e:Event) => {
     e.preventDefault()
   }
@@ -54,10 +48,11 @@ const Contact = ({setSelectedPage}:Props) => {
             </div>
             <div className="md:w-full mt-10">
               <form
-                target="_blank"
-                onSubmit={() => onSubmit}
-                action='https://formsubmit.co/d97c4f05e47a9862055240e8db5def9c'
+                name="gym contact"
+                action='/messagesent'
                 method="POST"
+                data-netlify="true"
+                data-netlify-honeypot='bot-field'
                 className="flex flex-col items-center md:items-start "
               >
                 <div className={inputContainer}>
@@ -90,9 +85,6 @@ const Contact = ({setSelectedPage}:Props) => {
                   <label htmlFor="message" className={customPlaceholder}>MESSAGE</label>
 
                 </div>
-                <input type="hidden" name="_next" value="https://ts-project-gym-app.vercel.app/messagesent" />
-
-
                 <button 
                   type="submit"
                   className='primary-btn'>
